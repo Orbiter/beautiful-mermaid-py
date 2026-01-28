@@ -8,7 +8,7 @@ Ultra-fast, fully themeable, zero DOM dependencies. Built for the AI era.
 
 ![beautiful-mermaid sequence diagram example](hero.png)
 
-<!-- [![npm version](https://img.shields.io/npm/v/beautiful-mermaid.svg)](https://www.npmjs.com/package/beautiful-mermaid) -->
+[![npm version](https://img.shields.io/npm/v/beautiful-mermaid.svg)](https://www.npmjs.com/package/beautiful-mermaid)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [**Live Demo & Samples**](https://agents.craft.do/mermaid) · [Themes](#themes) · [API](#api) · [GitHub](https://github.com/lukilabs/beautiful-mermaid)
