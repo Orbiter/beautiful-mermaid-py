@@ -3,14 +3,14 @@ set -euo pipefail
 
 repo_dir=$(cd "$(dirname "$0")" && pwd)
 input_file="$repo_dir/samples-data.ts"
-script="$repo_dir/beautiful-mermaid.py"
+script="$repo_dir/beautiful_mermaid.py"
 
 if [[ ! -f "$input_file" ]]; then
   echo "samples-data.ts not found at $input_file" >&2
   exit 1
 fi
 if [[ ! -f "$script" ]]; then
-  echo "beautiful-mermaid.py not found at $script" >&2
+  echo "beautiful_mermaid.py not found at $script" >&2
   exit 1
 fi
 

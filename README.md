@@ -12,24 +12,47 @@ This project was vibe-coded by porting the TypeScript ASCII renderer from `https
   - classDiagram
   - erDiagram
 
+## Example:
+
+The image below is the ASCII/Unicode output generated for that sample.
+
+![Sequence: Par Block](mermaid-sequence.png)
+
+Here’s the Mermaid source that produced the image:
+
+```mermaid
+sequenceDiagram
+  participant C as Client
+  participant A as AuthService
+  participant U as UserService
+  participant O as OrderService
+  C->>A: Authenticate
+  par Fetch user data
+    A->>U: Get profile
+  and Fetch orders
+    A->>O: Get orders
+  end
+  A-->>C: Combined response
+```
+
 ## Usage
 
 Render a Mermaid text file:
 
 ```bash
-python3 beautiful-mermaid.py path/to/diagram.mmd
+python3 beautiful_mermaid.py path/to/diagram.mmd
 ```
 
 ASCII-only mode:
 
 ```bash
-python3 beautiful-mermaid.py path/to/diagram.mmd --ascii
+python3 beautiful_mermaid.py path/to/diagram.mmd --ascii
 ```
 
 Tuning layout spacing:
 
 ```bash
-python3 beautiful-mermaid.py diagram.mmd --padding-x 5 --padding-y 5 --box-padding 1
+python3 beautiful_mermaid.py diagram.mmd --padding-x 5 --padding-y 5 --box-padding 1
 ```
 
 ## CLI options
@@ -53,7 +76,8 @@ output = render_mermaid_ascii("""
 print(output)
 ```
 
-Note: the module is a single file named `beautiful-mermaid.py`; rename it if you want standard Python imports.
+Note: the module is a single file named `beautiful_mermaid.py`.
+
 
 ## License
 
