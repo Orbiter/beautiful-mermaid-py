@@ -20,7 +20,7 @@ The image below is the ASCII/Unicode output generated for that sample.
 
 Here’s the Mermaid source that produced the image:
 
-```mermaid
+```
 sequenceDiagram
   participant C as Client
   participant A as AuthService
