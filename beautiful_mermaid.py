@@ -1332,13 +1332,13 @@ def convert_subgraph(m_sg: MermaidSubgraph, parent: Optional[AsciiSubgraph], nod
 
 
 def deduplicate_subgraph_nodes(mermaid_sgs: List[MermaidSubgraph], ascii_sgs: List[AsciiSubgraph], node_map: Dict[str, AsciiNode]) -> None:
-    sg_map: Dict[MermaidSubgraph, AsciiSubgraph] = {}
+    sg_map: Dict[int, AsciiSubgraph] = {}
     build_sg_map(mermaid_sgs, ascii_sgs, sg_map)
 
     node_owner: Dict[str, AsciiSubgraph] = {}
 
     def claim_nodes(m_sg: MermaidSubgraph) -> None:
-        ascii_sg = sg_map.get(m_sg)
+        ascii_sg = sg_map.get(id(m_sg))
         if not ascii_sg:
             return
         for child in m_sg.children:
@@ -1378,7 +1378,7 @@ def is_ancestor_or_self(candidate: AsciiSubgraph, target: AsciiSubgraph) -> bool
     return False
 
 
-def build_sg_map(m_sgs: List[MermaidSubgraph], a_sgs: List[AsciiSubgraph], result: Dict[MermaidSubgraph, AsciiSubgraph]) -> None:
+def build_sg_map(m_sgs: List[MermaidSubgraph], a_sgs: List[AsciiSubgraph], result: Dict[int, AsciiSubgraph]) -> None:
     flat_mermaid: List[MermaidSubgraph] = []
 
     def flatten(sgs: List[MermaidSubgraph]) -> None:
@@ -1389,7 +1389,7 @@ def build_sg_map(m_sgs: List[MermaidSubgraph], a_sgs: List[AsciiSubgraph], resul
     flatten(m_sgs)
 
     for i in range(min(len(flat_mermaid), len(a_sgs))):
-        result[flat_mermaid[i]] = a_sgs[i]
+        result[id(flat_mermaid[i])] = a_sgs[i]
 
 
 # =============================================================================
