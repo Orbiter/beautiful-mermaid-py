@@ -81,7 +81,7 @@ Note: the module is a single file named `beautiful_mermaid.py`.
 
 ## License
 
-Original TypeScript Project Author of https://github.com/lukilabs/beautiful-mermaid:
-Copyright (c) 2026 Luki Labs, MIT License. See `LICENSE`.
-Python Version was written by Codex, Code Curator: Michael Christen
-Happy Vibe Coding!
+- Original Go project (beautiful-mermaid is based on mermaid-ascii) https://github.com/AlexanderGrooff/mermaid-ascii Copyright (c) 2024 Alexander Grooff (@AlexanderGrooff), MIT License
+- Original TypeScript Project Author of https://github.com/lukilabs/beautiful-mermaid: Copyright (c) 2026 Luki Labs (@balintorosz), MIT License
+- This Python Version was written by Codex, Code Curator: Copyright (c) 2026 Michael Christen (@orbiterlab), MIT License
+
